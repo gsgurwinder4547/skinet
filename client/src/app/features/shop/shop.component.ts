@@ -12,7 +12,7 @@ import { MatListOption, MatSelectionList, MatSelectionListChange } from '@angula
 import { ShopParams } from '../../shared/models/shopParams';
 import { Pagination } from '../../shared/models/pagination';
 import { FormsModule } from '@angular/forms';
-import { MatIconButton } from "../../../../node_modules/@angular/material/button/index";
+import { MatIconButton } from "@angular/material/button";
 
 @Component({
   selector: 'app-shop',
