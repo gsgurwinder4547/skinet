@@ -14,31 +14,14 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideHttpClient(withInterceptors([errorInterceptor, loadingInterceptor])),
-    // provideAppInitializer(async () => {
-    //   const initService = inject(InitService);
-    //   return lastValueFrom(initService.init()).finally(() => {
-    //     const splash = document.getElementById('initial-splash');
-    //     if (splash) {
-    //       splash.remove();
-    //     }
-    //   })
-    // }),
-    provideAppInitializer(() => {
+    provideAppInitializer(async () => {
       const initService = inject(InitService);
-      return lastValueFrom(
-        initService.init().pipe(
-          catchError(err => {
-            console.error('App init failed', err);
-            return of(null); // <-- never reject boot
-          })
-        )
-      ).finally(() => {
-        document.getElementById('initial-splash')?.remove();
-      });
+      return lastValueFrom(initService.init()).finally(() => {
+        const splash = document.getElementById('initial-splash');
+        if (splash) {
+          splash.remove();
+        }
+      })
     }),
-    {
-       provide: MAT_DIALOG_DEFAULT_OPTIONS,
-       useValue: { autoFocus: 'dialog', restoreFocus: true }
-    }
   ]
 };
