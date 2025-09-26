@@ -7,7 +7,7 @@
             <label class="p-3 border border-gray-200 cursor-pointer w-full h-full hover:bg-purple-100">
                 <mat-radio-button 
                     class="w-full h-full" 
-                    (change)="cartService.selectedDelivery() === method"
+                    [checked]="cartService.selectedDelivery() === method"
                     [value]="method">
                     <div class="flex flex-col w-full h-full">
                         <strong>{{method.shortName}} - {{method.price | currency}}</strong>
