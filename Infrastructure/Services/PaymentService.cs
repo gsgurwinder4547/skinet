@@ -47,7 +47,7 @@ public class PaymentService(IConfiguration config, ICartService cartService, IUn
             {
                 Amount = (long)cart.Items.Sum(x => x.Quantity * (x.Price * 100))
                     + (long)shippingPrice * 100,
-                Currency = "cad",
+                Currency = "usd",
                 PaymentMethodTypes = ["card"]
             };
             intent = await service.CreateAsync(options);
