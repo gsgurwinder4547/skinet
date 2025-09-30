@@ -3,7 +3,6 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import { AdminService } from '../../core/services/admin.service';
 import { OrderParams } from '../../shared/models/orderParams';
-import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { MatLabel, MatSelectChange, MatSelectModule } from '@angular/material/select';
 import { CurrencyPipe, DatePipe } from '@angular/common';
@@ -19,7 +18,6 @@ import { DialogService } from '../../core/services/dialog.service';
   imports: [
     MatTableModule,
     MatPaginator,
-    MatButton,
     MatIcon,
     MatLabel,
     MatSelectModule,
