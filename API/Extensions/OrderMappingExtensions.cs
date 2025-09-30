@@ -5,7 +5,7 @@ namespace API.Extensions;
 
 public static class OrderMappingExtensions
 {
-    public static OrderDto toDto(this Order order)
+    public static OrderDto ToDto(this Order order)
     {
         return new OrderDto
         {
